@@ -1,0 +1,15 @@
+Package: compliment
+Title: Generate Randomized Compliments
+Version: 0.0.0.9000
+Authors@R: 
+    person("First", "Last", , "first.last@example.com", role = c("aut", "cre"))
+Description: Generates randomized, uplifting compliments. Provides a simple
+    function for producing a random compliment, optionally personalized
+    with a name, drawn from a bank of adjectives and traits.
+License: MIT + file LICENSE
+Encoding: UTF-8
+Roxygen: list(markdown = TRUE)
+Suggests: 
+    testthat (>= 3.0.0)
+Config/testthat/edition: 3
+Config/roxygen2/version: 8.1.0
