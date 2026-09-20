@@ -14,7 +14,7 @@ output:
 
 Install the development version from GitHub:
 
-```r
+```{r}
 # install.packages("pak")
 pak::pak("gayol-openrxiv/compliment")
 ```
@@ -23,9 +23,28 @@ pak::pak("gayol-openrxiv/compliment")
 
 A package built with Posit Assisstant during posit::conf(2026) in the "Our Modern R Workflow" workshow with Jenny Bryan and Hadley Wickham.
 
-```r
+```{r}
 library(compliment)
-compliment(name =NULL, mood = c("kind, grumpy"))
 ```
 
-Call `compliment()` with optional arguments `name` and `mood`. Providing a name will address the compliment to that person. Providing `mood = "grumpy"` will generate a backhanded compliment. If no mood is provided, the compliment will be kind 😊.
+Call `compliment()` with optional arguments `name` and `mood`. Providing a name will address the compliment to that person. Providing `mood = "stab"` will generate a backhanded compliment. If no mood is provided, the compliment will be kind 😊.
+
+```
+compliment(name = NULL, mood = c("kind", "stab"))
+```
+
+
+### Example
+
+A kind compliment addressed to Olaya:
+```{r}
+compliment("Olaya")
+compliment
+```
+
+A backhanded compliment addressed to Olaya:
+
+```{r}
+compliment("Olaya", mood = "stab")
+compliment
+```

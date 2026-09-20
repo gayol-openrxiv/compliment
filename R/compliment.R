@@ -37,7 +37,7 @@ compliment_traits <- c(
   "ability to make others smile"
 )
 
-#' Backhanded adjectives used to build grumpy compliments
+#' Backhanded adjectives used to build backhanded compliments
 #'
 #' @keywords internal
 #' @noRd
@@ -49,7 +49,7 @@ backhanded_adjectives <- c(
   "not the worst"
 )
 
-#' Backhanded templates used to build grumpy compliments
+#' Backhanded templates used to build backhanded compliments
 #'
 #' @keywords internal
 #' @noRd
@@ -67,14 +67,14 @@ backhanded_templates <- c(
 #' Generate a random compliment
 #'
 #' Produces a randomized compliment, optionally addressed to a specific name.
-#' With `mood = "grumpy"`, produces a backhanded compliment instead.
+#' With `mood = "stab"`, produces a backhanded compliment instead.
 #'
 #' @param name Optional character string giving the name of the person to
 #'   compliment. If `NULL` (the default), a generic compliment is returned.
 #'   For convenience, if `name` matches one of the available moods (e.g.
-#'   `"grumpy"`) it is treated as the `mood` instead.
+#'   `"stab"`) it is treated as the `mood` instead.
 #' @param mood The tone of the compliment: `"kind"` (the default) for a
-#'   sincere compliment, or `"grumpy"` for a backhanded one.
+#'   sincere compliment, or `"stab"` for a backhanded one.
 #'
 #' @return A single character string containing a compliment.
 #' @export
@@ -82,9 +82,9 @@ backhanded_templates <- c(
 #' @examples
 #' compliment()
 #' compliment("Alex")
-#' compliment("grumpy")
-#' compliment("Alex", mood = "grumpy")
-compliment <- function(name = NULL, mood = c("kind", "grumpy")) {
+#' compliment("stab")
+#' compliment("Alex", mood = "stab")
+compliment <- function(name = NULL, mood = c("kind", "stab")) {
   moods <- eval(formals()$mood)
   if (!is.null(name)) {
     if (!is.character(name) || length(name) != 1) {
@@ -98,7 +98,7 @@ compliment <- function(name = NULL, mood = c("kind", "grumpy")) {
   }
   mood <- match.arg(mood)
 
-  if (mood == "grumpy") {
+  if (mood == "stab") {
     adjective <- sample(backhanded_adjectives, 1)
     templates <- c(
       backhanded_templates,

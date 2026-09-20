@@ -4,27 +4,27 @@
 \alias{compliment}
 \title{Generate a random compliment}
 \usage{
-compliment(name = NULL, mood = c("kind", "grumpy"))
+compliment(name = NULL, mood = c("kind", "stab"))
 }
 \arguments{
 \item{name}{Optional character string giving the name of the person to
 compliment. If \code{NULL} (the default), a generic compliment is returned.
 For convenience, if \code{name} matches one of the available moods (e.g.
-\code{"grumpy"}) it is treated as the \code{mood} instead.}
+\code{"stab"}) it is treated as the \code{mood} instead.}
 
 \item{mood}{The tone of the compliment: \code{"kind"} (the default) for a
-sincere compliment, or \code{"grumpy"} for a backhanded one.}
+sincere compliment, or \code{"stab"} for a backhanded one.}
 }
 \value{
 A single character string containing a compliment.
 }
 \description{
 Produces a randomized compliment, optionally addressed to a specific name.
-With \code{mood = "grumpy"}, produces a backhanded compliment instead.
+With \code{mood = "stab"}, produces a backhanded compliment instead.
 }
 \examples{
 compliment()
 compliment("Alex")
-compliment("grumpy")
-compliment("Alex", mood = "grumpy")
+compliment("stab")
+compliment("Alex", mood = "stab")
 }
